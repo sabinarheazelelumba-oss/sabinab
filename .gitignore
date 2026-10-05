@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Environment
+.env
+!.env.example
+*.pem
+
+# Dependencies
+vendor/
+app/vendor/
+composer.lock
+
+# Cache & Logs
+runtime/*
+!runtime/.htaccess
+!runtime/index.html
+*.log
+*.cache
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# OS
+Thumbs.db
+
+# Node (if you keep a frontend next to the API)
+node_modules/

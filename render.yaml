@@ -1,0 +1,40 @@
+# Optional Render Blueprint (New + > Blueprint). You can also create the Web Service by hand,
+# see README.md. Values marked "sync: false" are asked for in the dashboard so they are
+# never stored in GitHub.
+services:
+  - type: web
+    name: product-management-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: MIGRATION_ENABLED
+        value: "false"
+      - key: DB_DRIVER
+        value: mysql
+      - key: DB_CHARSET
+        value: utf8mb4
+      - key: DB_SSL
+        value: "true"
+      - key: DB_SSL_VERIFY
+        value: "false"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REFRESH_TOKEN_KEY
+        generateValue: true
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SSL_CA_CONTENT
+        sync: false
+      - key: ALLOW_ORIGIN
+        sync: false
